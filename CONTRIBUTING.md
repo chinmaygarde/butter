@@ -4,7 +4,7 @@
 
 1. Clone the repo and enter the directory:
    ```bash
-   git clone https://github.com/your-org/butter.git
+   git clone https://github.com/chinmaygarde/butter.git
    cd butter
    ```
 

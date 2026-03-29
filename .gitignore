@@ -31,3 +31,4 @@ htmlcov/
 # Claude Code — local only (rules and agents are version-controlled)
 .claude/settings.local.json
 .claude/projects/
+.claude/agent-memory/

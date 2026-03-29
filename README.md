@@ -26,18 +26,27 @@
 ## Installation
 
 ```bash
-uv tool install butter
+uv tool install butter-tree
 ```
 
 Or from source:
 
 ```bash
-git clone https://github.com/your-org/butter.git
+git clone https://github.com/chinmaygarde/butter.git
 cd butter
 just install
 ```
 
 ## Quick Start
+
+Before using butter, verify your system meets all requirements:
+
+```bash
+# Check OS, filesystem, and btrfs binary
+butter doctor filesystem
+```
+
+The remaining commands are defined but not yet implemented:
 
 ```bash
 # Create a new isolated environment named "feature-x" from the current directory
