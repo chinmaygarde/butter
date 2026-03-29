@@ -2,6 +2,9 @@
 
 > BTRFS-backed isolated development environments
 
+> [!CAUTION]
+> This tools is still under development and not ready for use yet.
+
 [![CI](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml/badge.svg)](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml)
 
 ## Goals
