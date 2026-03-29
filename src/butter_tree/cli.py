@@ -1,6 +1,8 @@
 import click
 from rich.console import Console
 
+from butter_tree.doctor import doctor
+
 console = Console()
 
 
@@ -8,6 +10,9 @@ console = Console()
 @click.version_option()
 def cli() -> None:
     """butter: BTRFS-backed isolated development environments."""
+
+
+cli.add_command(doctor)
 
 
 @cli.command()
