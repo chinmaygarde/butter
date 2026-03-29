@@ -2,7 +2,7 @@
 
 > BTRFS-backed isolated development environments
 
-![CI](https://github.com/your-org/butter/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml/badge.svg)](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml)
 
 ## Goals
 
