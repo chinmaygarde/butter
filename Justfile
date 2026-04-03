@@ -21,3 +21,7 @@ test:
 # Run the butter CLI (use: just run -- --help)
 run *args:
     uv run butter {{ args }}
+
+# Install the butter CLI as a uv tool
+install-tool:
+    uv tool install .
