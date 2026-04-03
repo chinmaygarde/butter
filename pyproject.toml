@@ -1,5 +1,5 @@
 [project]
-name = "butter-tree"
+name = "butter"
 version = "0.1.0"
 description = "BTRFS-backed isolated development environments"
 readme = "README.md"

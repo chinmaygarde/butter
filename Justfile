@@ -24,4 +24,4 @@ run *args:
 
 # Install the butter CLI as a uv tool
 install-tool:
-    uv tool install .
+    uv tool install --reinstall .
