@@ -1,3 +1,5 @@
+import subprocess
+
 import click
 from rich.console import Console
 
@@ -34,6 +36,22 @@ def list_worktrees() -> None:
 def remove(name: str) -> None:
     """Remove the worktree named NAME."""
     console.print(f"[bold]remove[/bold] {name!r} — not yet implemented")
+
+
+@cli.command()
+@click.argument("path", type=click.Path())
+def init(path: str) -> None:
+    """Create a BTRFS subvolume at PATH."""
+    result = subprocess.run(
+        ["btrfs", "subvolume", "create", path],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode == 0:
+        console.print(f"[green]created[/green] subvolume at {path!r}")
+    else:
+        console.print(f"[red]error:[/red] {result.stderr.strip()}", err=True)
+        raise SystemExit(result.returncode)
 
 
 def main() -> None:
