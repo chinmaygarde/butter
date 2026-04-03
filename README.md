@@ -47,17 +47,41 @@ just install
 
 ## Quick Start
 
-Before using butter, verify your system meets all requirements:
+Before using butter, verify your system meets all requirements. Run from the directory where you plan to work — the filesystem check tests whether that directory resides on BTRFS:
 
 ```bash
-# Check OS, filesystem, and btrfs binary
 butter doctor filesystem
 ```
 
-Initialize a butter repo at the given path (creates a BTRFS subvolume and marks it with a `user.butter.repo` xattr):
+Initialize a butter repo at a path on a BTRFS filesystem:
 
 ```bash
 butter init /mnt/btrfs/myproject
+```
+
+Once inside a repo, inspect it with `info`:
+
+```bash
+cd /mnt/btrfs/myproject
+butter info
+```
+
+Create a new worktree named `feature-x` branched from the current repo:
+
+```bash
+butter add feature-x
+```
+
+List all managed worktrees:
+
+```bash
+butter list
+```
+
+Remove a worktree:
+
+```bash
+butter remove feature-x
 ```
 
 ## Development

@@ -91,6 +91,60 @@ After completing your audit, provide a structured summary:
 [List any items you were uncertain about and could not fully resolve]
 ```
 
+## Quick Start Audit (High Priority)
+
+The Quick Start section is the first thing new users read. Treat it as a separate, mandatory audit pass with a higher bar than the rest of the documentation.
+
+### Completeness check
+
+The Quick Start must cover the full end-to-end workflow a new user needs to get from zero to a working environment. For butter, that means:
+
+1. **System check** — `butter doctor filesystem` to verify OS, filesystem, and binary requirements
+2. **Repo initialization** — `butter init <path>` with a realistic example path on a BTRFS mount
+3. **Worktree creation** — `butter add <name>` to create an isolated environment from the repo
+4. **Listing worktrees** — `butter list` to see what exists
+5. **Repo info** — `butter info` to inspect the current repo
+6. **Worktree removal** — `butter remove <name>` when cleaning up
+
+Cross-check each step against the actual CLI (read the source). If a command is not yet implemented, omit the step entirely — do not document stubs or placeholders as if they work.
+
+### Accuracy check
+
+For each command shown in the Quick Start:
+- Verify the subcommand name exists in the source
+- Verify all arguments, flags, and positional parameters are correct
+- Ensure the example invocation would actually succeed (no missing required arguments, no invented flags)
+- Check that example paths are realistic (e.g., `/mnt/btrfs/myproject`, not `/some/path`)
+
+### Example quality
+
+Every command in the Quick Start must be accompanied by a concrete, copy-pasteable example with realistic values — not abstract placeholders like `<path>` or `NAME`. Good examples:
+
+```bash
+# Create a worktree named "feature-auth" from the current repo
+butter add feature-auth
+```
+
+```bash
+# List all worktrees in the current repo
+butter list
+```
+
+Show expected output where it is short and informative. A user should be able to read the Quick Start and immediately know what to type and what to expect back.
+
+### Prohibited content
+
+The Quick Start is user-facing documentation. **Never include**:
+- Internal xattr key names (e.g., `user.butter.repo`, `user.butter.worktree`, or any other `user.*` xattr labels)
+- Filesystem implementation details (subvolume internals, inode metadata, kernel interface names)
+- Python module paths, class names, or source-level implementation references
+- Any detail a user would never need to type or know to use the tool
+
+If a sentence explains *how* butter works internally in order to describe *what* a command does, rewrite it to describe only the observable behavior. For example:
+
+- BAD: "Initializes a BTRFS subvolume and marks it with a `user.butter.repo` xattr"
+- GOOD: "Creates a new butter repo at the given path"
+
 ## Edge Cases
 
 - **Conflicting documentation**: When two docs contradict each other, determine which reflects current code and update/delete the other.
