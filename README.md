@@ -3,7 +3,7 @@
 > BTRFS-backed isolated development environments
 
 > [!CAUTION]
-> This tools is still under development and not ready for use yet.
+> This tool is still under development and not ready for use yet.
 
 [![CI](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml/badge.svg)](https://github.com/chinmaygarde/butter/actions/workflows/ci.yml)
 
@@ -44,6 +44,12 @@ Before using butter, verify your system meets all requirements:
 ```bash
 # Check OS, filesystem, and btrfs binary
 butter doctor filesystem
+```
+
+Initialize a butter repo at the given path (creates a BTRFS subvolume and marks it with a `user.butter.repo` xattr):
+
+```bash
+butter init /mnt/btrfs/myproject
 ```
 
 The remaining commands are defined but not yet implemented:

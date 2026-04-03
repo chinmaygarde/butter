@@ -1,3 +1,4 @@
+import os
 import subprocess
 
 import click
@@ -41,14 +42,15 @@ def remove(name: str) -> None:
 @cli.command()
 @click.argument("path", type=click.Path())
 def init(path: str) -> None:
-    """Create a BTRFS subvolume at PATH."""
+    """Initialize a butter repo at PATH."""
     result = subprocess.run(
         ["btrfs", "subvolume", "create", path],
         capture_output=True,
         text=True,
     )
     if result.returncode == 0:
-        console.print(f"[green]created[/green] subvolume at {path!r}")
+        os.setxattr(path, b"user.butter.repo", os.path.basename(path).encode())
+        console.print(f"[green]initialized[/green] repo at {path!r}")
     else:
         console.print(f"[red]error:[/red] {result.stderr.strip()}", err=True)
         raise SystemExit(result.returncode)
