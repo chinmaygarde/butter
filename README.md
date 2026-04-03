@@ -61,22 +61,6 @@ Initialize a butter repo at the given path (creates a BTRFS subvolume and marks 
 butter init /mnt/btrfs/myproject
 ```
 
-The remaining commands are defined but not yet implemented:
-
-```bash
-# Create a new isolated environment named "feature-x" from the current directory
-butter add feature-x
-
-# Create from an explicit source path
-butter add experiment /mnt/btrfs/projects/myproject
-
-# List all managed worktrees
-butter list
-
-# Remove a worktree and its subvolume
-butter remove feature-x
-```
-
 ## Development
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
