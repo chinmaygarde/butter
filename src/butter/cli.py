@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 import click
@@ -60,4 +61,7 @@ def info() -> None:
 
 
 def main() -> None:
+    if sys.platform != "linux":
+        err_console.print("[red]error:[/red] butter requires Linux")
+        raise SystemExit(1)
     cli()
