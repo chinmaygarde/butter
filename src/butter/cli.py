@@ -4,7 +4,7 @@ import subprocess
 import click
 from rich.console import Console
 
-from butter_tree.doctor import doctor
+from butter.doctor import doctor
 
 console = Console()
 

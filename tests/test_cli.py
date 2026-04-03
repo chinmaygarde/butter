@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from butter_tree.cli import cli
+from butter.cli import cli
 
 
 def test_help():
