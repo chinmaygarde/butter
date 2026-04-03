@@ -66,24 +66,6 @@ cd /mnt/btrfs/myproject
 butter info
 ```
 
-Create a new worktree named `feature-x` branched from the current repo:
-
-```bash
-butter add feature-x
-```
-
-List all managed worktrees:
-
-```bash
-butter list
-```
-
-Remove a worktree:
-
-```bash
-butter remove feature-x
-```
-
 ## Development
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
