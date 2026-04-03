@@ -18,10 +18,19 @@
 
 ## Requirements
 
+### End users
+
 - Linux with a BTRFS-formatted filesystem
 - Python 3.12+
-- `just` (task runner)
+- `btrfs-progs` (`btrfs` binary in PATH)
 - Root / sudo access for BTRFS subvolume operations
+
+### Development
+
+All of the above, plus:
+
+- [`uv`](https://docs.astral.sh/uv/) (package manager)
+- [`just`](https://github.com/casey/just) (task runner)
 
 ## Installation
 
