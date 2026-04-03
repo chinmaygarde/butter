@@ -13,7 +13,7 @@ err_console = Console(stderr=True)
 
 
 @click.group()
-@click.version_option(package_name="butter")
+@click.version_option(package_name="butter-btrfs")
 def cli() -> None:
     """butter: BTRFS-backed isolated development environments."""
 
